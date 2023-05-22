@@ -1,0 +1,45 @@
+body {
+    margin: 0 auto;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #fafafa;
+}
+
+nav { 
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    background-color: #008CBA;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+nav h1 {
+    flex: auto;
+    margin: 0;
+}
+
+nav h1 a {
+    padding: 0.25rem 0.5rem;
+}
+
+nav ul  {
+    display: flex;
+    list-style: none;
+    margin: 0; padding: 0;
+}
+
+nav ul li a, nav ul li span, header .action {
+    display: block; 
+    padding: 0.5rem;
+}
+
+.content {
+    padding: 0 .5rem;
+}
