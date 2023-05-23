@@ -3,13 +3,21 @@
 class App {
 
     /**
-     * Initialize DOM elements references.
+     * Initialize DOM elements references and bind events.
      */
     initialize() {
 
         this.pieces = [];
         this.piecesListUL = document.querySelector("#pieces-list");
         this.pieceTemplate = document.querySelector("#piece-template");
+
+        this.widthInput = document.querySelector("#width-input");
+        this.heightInput = document.querySelector("#height-input");
+        this.addButton = document.querySelector("button.add-button");
+
+        this.widthInput.addEventListener("keypress", this.onDimensionsKeypress);
+        this.heightInput.addEventListener("keypress", this.onDimensionsKeypress);
+        this.addButton.addEventListener("click", () => this.onAddPieceButtonClick());
     }
 
     /**
@@ -60,13 +68,43 @@ class App {
 
             const id = li.getAttribute("piece-id");
 
-            if(id > pieceId) {
+            if (id > pieceId) {
                 li.setAttribute("piece-id", id - 1);
                 li.querySelector(".piece-id").innerText = `#${id - 1}`;
             }
         });
     }
 
+    /**
+     * Dimensions input accepts only numbers.
+     * @param {*} ev 
+     */
+    onDimensionsKeypress(ev) {
+
+        // TODO: handle paste
+
+        const regex = /[0-9]|\./;
+
+        if (!regex.test(ev.key)) {
+
+            ev.returnValue = false;
+            if (ev.preventDefault) ev.preventDefault();
+        }
+    }
+
+    /**
+     * Add piece button click event.
+     */
+    onAddPieceButtonClick() {
+
+        const width = parseInt(this.widthInput.value);
+        const height = parseInt(this.heightInput.value);
+
+        if(!width || !height) return;
+
+        const piece = new Piece(null, width, height);
+        this.addPiece(piece);
+    }
 }
 
 var app = new App();

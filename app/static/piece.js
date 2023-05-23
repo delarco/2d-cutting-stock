@@ -2,10 +2,10 @@
 
 class Piece {
 
-    constructor(id, height, width) {
+    constructor(id, width, height) {
 
         this.id = id;
-        this.height = height;
         this.width = width;
+        this.height = height;
     }
 }
