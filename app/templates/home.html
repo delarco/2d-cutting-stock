@@ -5,29 +5,25 @@
 {% block scripts %}
 <script src="{{ url_for('static', filename='piece.js') }}"></script>
 <script src="{{ url_for('static', filename='app.js') }}"></script>
-<script>document.addEventListener("DOMContentLoaded", () => app.initialize());</script>
+<script>document.addEventListener("DOMContentLoaded", () => {
+    app.initialize();
+
+    // add test pieces
+    app.addPiece({ width: 300.0, height: 40.0});
+    app.addPiece({ width: 450.0, height: 95.0});
+    app.addPiece({ width: 55.0, height: 490.0});
+});</script>
 {% endblock %}
 
 {% block content %}
-<div>
+<div class="pieces-container">
     <h2>Pieces</h2>
-    <ul id="pieces-list" class="pieces-list">
+    <ul id="pieces-list"></ul>
+    <template id="piece-template">
         <li>
-            <span class="piece-id">#1</span>
-            300mm x 40mm
-            <button class="delete-button">X</button>
-        </li>
-        <li>
-            <span class="piece-id">#2</span>
-            500mm x 95mm
-            <button class="delete-button">X</button>
-        </li>
-    </ul>
-    <template>
-        <li id="piece-template">
             <span class="piece-id"></span>
             <label></label>
-            <button class="delete-button">X</button>
+            <button class="remove-button">x</button>
         </li>
     </template>
 </div>
