@@ -2,6 +2,31 @@
 
 {% block title %}Home{% endblock %}
 
+{% block scripts %}
+<script>document.addEventListener("DOMContentLoaded", () => console.log('init app'));</script>
+{% endblock %}
+
 {% block content %}
-Home
+<div>
+    <h2>Pieces</h2>
+    <ul id="pieces-list" class="pieces-list">
+        <li>
+            <span class="piece-id">#1</span>
+            300mm x 40mm
+            <button class="delete-button">X</button>
+        </li>
+        <li>
+            <span class="piece-id">#2</span>
+            500mm x 95mm
+            <button class="delete-button">X</button>
+        </li>
+    </ul>
+    <template>
+        <li id="piece-template">
+            <span class="piece-id"></span>
+            <label></label>
+            <button class="delete-button">X</button>
+        </li>
+    </template>
+</div>
 {% endblock %}

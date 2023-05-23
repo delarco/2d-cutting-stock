@@ -43,3 +43,46 @@ nav ul li a, nav ul li span, header .action {
 .content {
     padding: 0 .5rem;
 }
+
+ul.pieces-list {
+    list-style: none;
+    width: 260px;
+    padding: 0;
+}
+
+ul.pieces-list li {
+    padding: 6px;
+    border: 1px solid black;
+    margin: 4px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    transition: background-color .1s linear;
+}
+
+ul.pieces-list li:hover {
+    background-color: #eee;
+}
+
+.delete-button {
+    border: 0;
+    background-color: unset;
+    color: #ff6347;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.delete-button:hover {
+    background-color: #ff6347;;
+    color: white;
+}
+
+span.piece-id {
+    background-color: #ffa500;
+    border-radius: 3px;
+    font-size: .8rem;
+    width: 40px;
+    text-align: center;
+}
