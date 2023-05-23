@@ -3,7 +3,9 @@
 {% block title %}Home{% endblock %}
 
 {% block scripts %}
-<script>document.addEventListener("DOMContentLoaded", () => console.log('init app'));</script>
+<script src="{{ url_for('static', filename='piece.js') }}"></script>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+<script>document.addEventListener("DOMContentLoaded", () => app.initialize());</script>
 {% endblock %}
 
 {% block content %}
