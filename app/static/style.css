@@ -72,6 +72,7 @@ nav ul li a, nav ul li span, header .action {
     border: 0;
     background-color: unset;
     color: #ff6347;
+    border: 1px solid #ff6347;
     border-radius: 3px;
     cursor: pointer;
     transition: all .2s ease-in-out;
@@ -88,4 +89,33 @@ span.piece-id {
     font-size: .8rem;
     width: 40px;
     text-align: center;
+}
+
+.add-piece {
+    padding: 6px;
+    border: 1px solid black;
+    margin: 4px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+}
+
+#width-input, #height-input {
+    width: 70px;
+}
+
+.add-button {
+    border: 0;
+    background-color: unset;
+    color: #008CBA;
+    border: 1px solid #008CBA;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.add-button:hover {
+    background-color: #008CBA;;
+    color: white;
 }
